@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+
+float P;
+printf("Enter Percentage");
+scanf("%f",&P);
+if (P>=90)
+{
+printf(" Grade =Ex");
+
+}
+else if(P>=75)
+{
+printf("Grade =A");
+}
+else if(P>=60)
+{
+printf("Grade = B");
+}
+else if(P>=40)
+{
+
+printf("Grade = C");
+}
+else
+printf("Your Afre Fail");
+return 0;
+}
