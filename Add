@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+        int a;
+        int b;
+        int sum;
+        int substract;
+
+        printf("Enter 1st no: ");
+        scanf("%d", &a);
+
+        printf("Enter 2nd no: ");
+        scanf("%d", &b);
+
+        sum = a + b;
+        substract = a - b;
+
+        printf("The Sum Of the Two is = %d\n", sum);
+        printf("The Difference between these are = %d\n", substract);
+
+        return 0;
+}
