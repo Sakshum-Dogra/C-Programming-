@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main()
+{
+int P;
+int M;
+int C;
+int E;
+int B;
+printf("ENTER MARKS IN PHYSICS");
+scanf("%d",&P);
+printf("ENTER MARKS IN CHEMISTRY");
+scanf("%d",&C);
+printf("ENTER MARKS IN MATHEMATICS");
+scanf("%d",&M);
+printf("ENTER MARKS IN ENGLISH");
+scanf("%d",&E);
+printf("ENTER MARKS IN BIOLOGY");
+scanf("%d",&B);
+float Total = P+M+C+B+E;
+printf("THE TOTAL MARKS IS =%f\n",Total);
+float Per = (Total/500.0)*100 ;
+
+printf("the Percentage is =%f\n",Per);
+if(Per>=90)
+{
+printf("The grade is = Ex\n");
+}
+else if(Per>=75)
+{
+printf("The grade is = A\n");
+
+}
+else if (Per>=60)
+{
+printf("The Grade is = B\n");
+}
+else if (Per>=40)
+{
+printf("The grade is =C\n");
+}
+else
+printf("You failed");
+return 0;
+}
