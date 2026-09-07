@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+        double a;
+        double b;
+        double sum;
+        double substract;
+        double multiply;
+        double divide;
+        printf("Enter 1st no: ");
+        scanf("%lf", &a);
+
+        printf("Enter 2nd no: ");
+        scanf("%lf", &b);
+
+
+        sum = a + b;
+        substract = a - b;
+        multiply = a * b;
+        divide = (double)a / b;
+        printf("The Sum Of the Two is = %lf\n", sum);
+        printf("The Difference between these are = %lf\n", substract);
+        printf("The Product of the Two is = %lf\n", multiply);
+        printf("The Division of the Two is = %lf\n", divide);
+
+        return 0;
+
+}
