@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+
+int main() {
+    long long n;
+    bool isPrime = true;
+
+    printf("Enter an integer: ");
+    scanf("%lld", &n);
+
+    
+    if (n <= 1) {
+        isPrime = false;
+    } else if (n <= 3) {
+        isPrime = true; // 2 and 3 are prime
+    } else if (n % 2 == 0 || n % 3 == 0) {
+        isPrime = false; // Exclude multiples of 2 and 3
+    } else {
+       
+        for (long long i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime) {
+        printf("%lld is a prime number.\n", n);
+    } else {
+        printf("%lld is not a prime number.\n", n);
+    }
+
+    return 0;
+}
