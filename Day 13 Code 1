@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() 
+{
+    char operator;
+    double num1, num2;
+
+    printf("Enter an operator (+, -, *, /, %%): ");
+    scanf(" %c", &operator);
+
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    switch (operator) {
+        case '+':
+            printf("%.2f + %.2f = %.2f\n", num1, num2, num1 + num2);
+            break;
+
+        case '-':
+            printf("%.2f - %.2f = %.2f\n", num1, num2, num1 - num2);
+            break;
+
+        case '*':
+            printf("%.2f * %.2f = %.2f\n", num1, num2, num1 * num2);
+            break;
+
+        case '/':
+            if (num2 != 0) {
+                printf("%.2f / %.2f = %.2f\n", num1, num2, num1 / num2);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+
+        case '%':
+            if ((long long)num2 != 0) {
+               
+                long long int1 = (long long)num1;
+                long long int2 = (long long)num2;
+                printf("%lld %% %lld = %lld\n", int1, int2, int1 % int2);
+            } else {
+                printf("Error: Modulo by zero is not allowed.\n");
+            }
+            break;
+
+        default:
+            printf("Error: '%c' is an invalid operator.\n", operator);
+            break;
+    }
+
+    return 0;
+}
