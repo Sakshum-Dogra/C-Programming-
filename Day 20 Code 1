@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    long long n, temp;
+    long long product = 1;
+    int has_odd = 0;
+
+    printf("Enter an integer: ");
+    scanf("%lld", &n);
+
+    
+    temp = (n < 0) ? -n : n;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit % 2 != 0) {
+            product *= digit;
+            has_odd = 1;
+        }
+        temp /= 10;
+    }
+
+    if (has_odd) {
+        printf("Product of odd digits of %lld is: %lld\n", n, product);
+    } else {
+        printf("No odd digits found in %lld.\n", n);
+    }
+
+    return 0;
+}
