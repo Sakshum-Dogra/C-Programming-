@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    int a = (num1 < 0) ? -num1 : num1;
+    int b = (num2 < 0) ? -num2 : num2;
+
+    if (a == 0 || b == 0) {
+        printf("LCM of %d and %d is: 0\n", num1, num2);
+        return 0;
+    }
+
+    
+    int x = a, y = b;
+    while (y != 0) {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+    int gcd = x;
+
+    
+    long long lcm = ((long long)a / gcd) * b;
+
+    printf("LCM of %d and %d is: %lld\n", num1, num2, lcm);
+
+    return 0;
+}
