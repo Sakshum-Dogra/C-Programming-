@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() 
+{
+    long long n;
+
+    printf("Enter an integer: ");
+    scanf("%lld", &n);
+
+    int sign = (n < 0) ? -1 : 1;
+    long long num = (n < 0) ? -n : n;
+
+    
+    if (num < 10) {
+        printf("Number after swapping first and last digit: %lld\n", n);
+        return 0;
+    }
+
+    int lastDigit = num % 10;
+    long long temp = num;
+    long long powerOf10 = 1;
+
+    
+    while (temp >= 10) {
+        powerOf10 *= 10;
+        temp /= 10;
+    }
+    int firstDigit = temp;
+
+    
+    long long middlePart = (num % powerOf10) / 10;
+
+   
+    long long swappedNum = (lastDigit * powerOf10) + (middlePart * 10) + firstDigit;
+
+    printf("Number after swapping first and last digit: %lld\n", sign * swappedNum);
+
+    return 0;
+}
