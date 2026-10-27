@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+    
+   
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter the number of columns: ");
+    scanf("%d", &cols);
+    
+    if (rows <= 0 || cols <= 0) {
+        printf("Invalid matrix dimensions.\n");
+        return 1;
+    }
+    
+    int mat[rows][cols];
+    int transpose[cols][rows]; 
+    
+    
+    printf("Enter the elements for a %d x %d matrix:\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+    
+   
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transpose[j][i] = mat[i][j];
+        }
+    }
+    
+   
+    printf("\nThe transpose of the matrix is (%d x %d):\n", cols, rows);
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d\t", transpose[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
