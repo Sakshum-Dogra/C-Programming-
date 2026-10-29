@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char date_str[20];
+    int day, month, year;
+    
+    
+    const char *months[] = {
+        "", "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    };
+    
+    printf("Enter date in dd/mm/yyyy format (e.g., 15/04/2026): ");
+    fgets(date_str, sizeof(date_str), stdin);
+    date_str[strcspn(date_str, "\n")] = '\0'; 
+    
+    
+    if (sscanf(date_str, "%d/%d/%d", &day, &month, &year) == 3) {
+       
+        if (month >= 1 && month <= 12) {
+            printf("\nFormatted Date: %02d-%s-%d\n", day, months[month], year);
+        } else {
+            printf("\nError: Invalid month number! Must be between 01 and 12.\n");
+        }
+    } else {
+        printf("\nError: Invalid format! Please use dd/mm/yyyy.\n");
+    }
+    
+    return 0;
+}
