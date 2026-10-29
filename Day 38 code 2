@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int isSymmetric = 1; // Flag assumed to be true initially
+    
+    printf("Enter the order of the square matrix (e.g., 3 for 3x3): ");
+    scanf("%d", &n);
+    
+    int mat[n][n];
+    
+   
+    printf("Enter elements of the matrix:\n");
+    for(i = 0; i < n; ++i) {
+        for(j = 0; j < n; ++j) {
+            printf("Element a[%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &mat[i][j]);
+        }
+    }
+   
+    for(i = 0; i < n; ++i) {
+        for(j = 0; j < n; ++j) {
+            if(mat[i][j] != mat[j][i]) {
+                isSymmetric = 0; // Mismatch found, not symmetric
+                break;
+            }
+        }
+        if(!isSymmetric) {
+            break; // Exit outer loop early if a mismatch was found
+        }
+    }
+    
+    
+    if(isSymmetric) {
+        printf("\nThe given matrix is SYMMETRIC.\n");
+    } else {
+        printf("\nThe given matrix is NOT SYMMETRIC.\n");
+    }
+    
+    return 0;
+}
