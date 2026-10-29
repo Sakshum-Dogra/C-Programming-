@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int isDistinct = 1; 
+    
+    printf("Enter the order of the square matrix (e.g., 3 for 3x3): ");
+    scanf("%d", &n);
+    
+    int mat[n][n];
+    
+    
+    printf("Enter elements of the matrix:\n");
+    for(i = 0; i < n; ++i) {
+        for(j = 0; j < n; ++j) {
+            printf("Element a[%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &mat[i][j]);
+        }
+    }
+    
+    
+    printf("\nMain diagonal elements: ");
+    for(i = 0; i < n; ++i) {
+        printf("%d ", mat[i][i]);
+    }
+    printf("\n");
+    
+    
+    for(i = 0; i < n; ++i) {
+        for(j = i + 1; j < n; ++j) {
+            if(mat[i][i] == mat[j][j]) {
+                isDistinct = 0; 
+                break;
+            }
+        }
+        if(!isDistinct) {
+            break; 
+        }
+    }
+    
+   
+    if(isDistinct) {
+        printf("All elements on the main diagonal are DISTINCT.\n");
+    } else {
+        printf("Elements on the main diagonal are NOT distinct (duplicates exist).\n");
+    }
+    
+    return 0;
+}
