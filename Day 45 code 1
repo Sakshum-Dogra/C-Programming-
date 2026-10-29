@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[150];
+    char target;
+    int count = 0;
+    
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    
+    printf("Enter the character to find: ");
+    scanf("%c", &target);
+    
+   
+    char lowerTarget = tolower(target);
+    
+  
+    for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+      
+        if (tolower(str[i]) == lowerTarget) {
+            count++;
+        }
+    }
+    
+    printf("\nThe character '%c' appears %d time(s) in the string (ignoring case).\n", target, count);
+    
+    return 0;
+}
