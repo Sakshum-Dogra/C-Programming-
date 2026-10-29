@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[150], result[150];
+    int j = 0;
+    
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    
+    for (int i = 0; str[i] != '\0'; i++) {
+        char ch = str[i];
+        char lowerCh = tolower(ch);
+        
+       
+        if (lowerCh != 'a' && lowerCh != 'e' && lowerCh != 'i' && lowerCh != 'o' && lowerCh != 'u') {
+            result[j++] = ch;
+        }
+    }
+    result[j] = '\0'; // Null-terminate the result string
+    
+    printf("String after removing vowels: %s", result);
+    
+    return 0;
+}
